@@ -16,13 +16,7 @@
  console.log(gradeCalculator(marks));
 
  function gradeCalculator(marks) {
-    let sum = 0;
-
-    for (value of marks)
-        sum += value;
-    
-    let average = (sum / marks.length); 
-
+    const average = calculateAverage(marks); 
     if (average >= 90)
         console.log('Grade: A');
     else if (average >= 80)
@@ -34,4 +28,13 @@
     else
         console.log('Grade: F');
 
+ }
+
+ function calculateAverage(array) {
+    let sum = 0;
+    
+    for (value of array)
+        sum += value;
+    
+    return (sum / array.length);
  }
